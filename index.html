@@ -407,38 +407,67 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
           <div class="l-stat-pill"><strong>24K+</strong><span>страниц</span></div>
         </div>
       </div>
-      <div class="l-glass-card" style="padding:32px 28px;">
-        <div style="text-align:center;margin-bottom:20px;">
-          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:.03em;">Единая экосистема</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px;">5 кабинетов, один цикл</div>
-        </div>
-        <!-- Cycle visualization -->
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(108,92,231,0.15);border:1px solid rgba(108,92,231,0.3);">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6C5CE7,#4834d4);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="12" height="9" rx="2"/><path d="M6 5V3.5a3 3 0 016 0V5"/></svg></div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff;">Адвокат</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Ведёт дело, анализирует с AI</div></div>
+      <div class="l-glass-card" style="padding:28px 24px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <!-- 1: Сканирование -->
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Сканирование томов занимает недели</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Сервис оцифровки: загрузка сканов, распознавание текста, проверка качества и отправка адвокату в один клик</div>
+            </div>
           </div>
-          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.2);">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00D4AA,#00b894);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="12" height="12" rx="2"/><path d="M3 8h12"/></svg></div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff;">Сканер</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Оцифровывает тома, отправляет</div></div>
+          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <!-- 2: Анализ дела -->
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Невозможно найти нужный эпизод среди сотен томов</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Умный поиск по всем материалам дела, анализ противоречий в показаниях, выявление нарушений</div>
+            </div>
           </div>
-          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(116,185,255,0.1);border:1px solid rgba(116,185,255,0.2);">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#74b9ff,#0984e3);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M3 17v-1a6 6 0 0112 0v1"/></svg></div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff;">Подзащитный</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Следит за ходом дела</div></div>
+          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <!-- 3: Юридическая помощь -->
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Юридическая консультация дорогая и недоступная</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Помощник Анна: ответы на юридические вопросы, подготовка претензий, исков и жалоб за минуты</div>
+            </div>
           </div>
-          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(253,121,168,0.1);border:1px solid rgba(253,121,168,0.2);">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#fd79a8,#e84393);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><path d="M15 11a2 2 0 01-2 2H7l-3 3V5a2 2 0 012-2h7a2 2 0 012 2z"/></svg></div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff;">Консультация</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">AI-юрист отвечает на вопросы</div></div>
+          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <!-- 4: Подзащитный -->
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Подзащитный не знает, что происходит с его делом</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Личный кабинет: статус дела, даты заседаний, материалы и связь с адвокатом в реальном времени</div>
+            </div>
           </div>
-          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
-          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(253,203,110,0.1);border:1px solid rgba(253,203,110,0.2);">
-            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ffeaa7,#fdcb6e);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="rgba(60,40,20,0.8)" stroke-width="1.8"><polygon points="9,2 11,7 16,7 12,10 13,15 9,12 5,15 6,10 2,7 7,7"/></svg></div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff;">Реестр юристов</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Каталог специалистов</div></div>
+          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <!-- 5: Реестр юристов -->
+          <div style="display:flex;gap:16px;">
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Сложно найти проверенного юриста</div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Реестр с рейтингами, специализацией, отзывами клиентов и прямой связью со специалистом</div>
+            </div>
           </div>
-          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:11px;padding:4px 0;">&#8635; цикл замкнут</div>
         </div>
       </div>
     </div>
@@ -2416,151 +2445,125 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 })();
 </script>
 
-<!-- ==================== AMBIENT MUSIC ==================== -->
-<div id="musicControl" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
-  <div id="spotifyPanel" style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3);transition:all .3s;width:300px;height:152px;">
-    <iframe style="border:0;width:100%;height:152px;" src="https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0" id="spotifyFrame" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-  <div style="display:flex;align-items:center;gap:6px;">
-    <div style="display:flex;gap:4px;">
-      <button onclick="switchTrack(0)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:1;"></button>
-      <button onclick="switchTrack(1)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(2)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(3)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(4)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+<!-- ==================== BACKGROUND MUSIC PLAYER ==================== -->
+<audio id="bgAudio" preload="auto"></audio>
+
+<!-- Overlay: нажмите чтобы включить музыку -->
+<div id="musicOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(12,6,22,0.92);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .5s;">
+  <div style="text-align:center;">
+    <div style="width:80px;height:80px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 40px rgba(108,92,231,0.4);animation:musicPulse 2s ease-in-out infinite;">
+      <svg width="32" height="32" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
     </div>
-    <button id="bgMusicBtn" onclick="toggleBgMusic()" style="padding:6px 12px;border-radius:8px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.6);">
-      <svg id="bgMusicIcon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6v4M4 4v8M7 2v12M10 5v6M13 7v2"/></svg>
-      <span id="bgMusicLabel">Вкл</span>
-    </button>
-    <input id="bgMusicVol" type="range" min="0" max="100" value="25" oninput="setBgVolume(this.value)" style="width:60px;height:3px;accent-color:#6C5CE7;cursor:pointer;">
-    <button onclick="toggleSpotifyPanel()" style="width:28px;height:28px;border-radius:8px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;justify-content:center;">
-      <svg width="12" height="12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"><path d="M1 3h10M1 6h6M1 9h8"/></svg>
-    </button>
+    <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:8px;">STAREC</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.5);">Нажмите, чтобы войти</div>
   </div>
+</div>
+<style>
+@keyframes musicPulse{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(108,92,231,0.4);}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(108,92,231,0.6);}}
+</style>
+
+<!-- Плеер: play/pause + track dots + volume -->
+<div id="musicControl" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:none;align-items:center;gap:6px;">
+  <div id="trackDots" style="display:flex;gap:4px;">
+    <button onclick="switchTrack(0)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:1;"></button>
+    <button onclick="switchTrack(1)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+    <button onclick="switchTrack(2)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+    <button onclick="switchTrack(3)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+    <button onclick="switchTrack(4)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+  </div>
+  <button id="bgMusicBtn" onclick="toggleBgMusic()" style="padding:6px 12px;border-radius:8px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.6);">
+    <svg id="bgMusicIcon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6v4M4 4v8M7 2v12M10 5v6M13 7v2"/></svg>
+    <span id="bgMusicLabel">Пауза</span>
+  </button>
+  <input id="bgMusicVol" type="range" min="0" max="100" value="40" oninput="setBgVolume(this.value)" style="width:60px;height:3px;accent-color:#6C5CE7;cursor:pointer;">
 </div>
 
 <script>
 (function(){
-  // === Ambient sound via Web Audio API (no external files needed) ===
-  var audioCtx = null;
-  var masterGain = null;
+  var audio = document.getElementById('bgAudio');
+  var overlay = document.getElementById('musicOverlay');
+  var control = document.getElementById('musicControl');
   var bgPlaying = false;
-  var oscillators = [];
-  var bgVolume = 0.25;
+  var currentTrack = 0;
 
-  function createAmbient(){
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    masterGain = audioCtx.createGain();
-    masterGain.gain.value = bgVolume;
-    masterGain.connect(audioCtx.destination);
-
-    // Soft ambient pad: multiple detuned oscillators
-    var freqs = [130.81, 164.81, 196.00, 261.63, 329.63]; // C3, E3, G3, C4, E4
-    freqs.forEach(function(f, i){
-      var osc = audioCtx.createOscillator();
-      var gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.value = f;
-      osc.detune.value = (i - 2) * 5; // slight detune for richness
-      gain.gain.value = 0.04;
-      osc.connect(gain);
-      gain.connect(masterGain);
-      osc.start();
-      oscillators.push({osc: osc, gain: gain});
-
-      // Slow volume modulation for movement
-      var lfo = audioCtx.createOscillator();
-      var lfoGain = audioCtx.createGain();
-      lfo.type = 'sine';
-      lfo.frequency.value = 0.05 + i * 0.02; // very slow
-      lfoGain.gain.value = 0.02;
-      lfo.connect(lfoGain);
-      lfoGain.connect(gain.gain);
-      lfo.start();
-    });
-
-    // Add subtle noise layer
-    var bufferSize = audioCtx.sampleRate * 2;
-    var noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-    var data = noiseBuffer.getChannelData(0);
-    for(var i = 0; i < bufferSize; i++){ data[i] = (Math.random() * 2 - 1) * 0.3; }
-    var noise = audioCtx.createBufferSource();
-    noise.buffer = noiseBuffer;
-    noise.loop = true;
-    var noiseFilter = audioCtx.createBiquadFilter();
-    noiseFilter.type = 'lowpass';
-    noiseFilter.frequency.value = 400;
-    var noiseGain = audioCtx.createGain();
-    noiseGain.gain.value = 0.008;
-    noise.connect(noiseFilter);
-    noiseFilter.connect(noiseGain);
-    noiseGain.connect(masterGain);
-    noise.start();
-  }
-
-  function startBgMusic(){
-    if(!audioCtx){ createAmbient(); }
-    if(audioCtx.state === 'suspended'){ audioCtx.resume(); }
-    bgPlaying = true;
-    document.getElementById('bgMusicLabel').textContent = 'Выкл';
-    document.getElementById('bgMusicIcon').style.color = '#6C5CE7';
-  }
-
-  // Auto-start on ANY user interaction (click, touch, key)
-  function autoStart(){
-    if(!bgPlaying){
-      startBgMusic();
-    }
-  }
-  document.addEventListener('click', autoStart, {once: true});
-  document.addEventListener('touchstart', autoStart, {once: true});
-  document.addEventListener('keydown', autoStart, {once: true});
-
-  window.toggleBgMusic = function(){
-    if(bgPlaying){
-      if(audioCtx) audioCtx.suspend();
-      bgPlaying = false;
-      document.getElementById('bgMusicLabel').textContent = 'Вкл';
-      document.getElementById('bgMusicIcon').style.color = 'rgba(255,255,255,0.6)';
-    } else {
-      startBgMusic();
-    }
-  };
-
-  window.setBgVolume = function(val){
-    bgVolume = val / 100;
-    if(masterGain) masterGain.gain.value = bgVolume;
-  };
-
-  // === Spotify player ===
-  var spotifyVisible = false;
   var tracks = [
-    'https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0',
-    'https://open.spotify.com/embed/track/7cJ3ELhDP4bxThf4HBwG6h?utm_source=generator&theme=0',
-    'https://open.spotify.com/embed/track/3fC5g0ntDhqtk1S0YjkWpH?utm_source=generator&theme=0',
-    'https://open.spotify.com/embed/track/0LhOsy5GSiEj1dRsnk0KHA?utm_source=generator&theme=0',
-    'https://open.spotify.com/embed/track/1zNXF2svmdlNxfS5XeNUgr?utm_source=generator&theme=0'
+    'https://p.scdn.co/mp3-preview/888c3b69a95aa28434b3e578974d9f781fe07dff', // Chill Lounge
+    'https://p.scdn.co/mp3-preview/63999c15b82953cd4fec30ab83154ba679dd6790', // Calm Reflections
+    'https://p.scdn.co/mp3-preview/cf23f67017d13c36608286f3ed56935a3c3c3dbb', // Kissing the Sunset
+    'https://p.scdn.co/mp3-preview/c87230dd3cb4d2d3ae3dfa5c7b28837248268de3', // Beach Whisper
+    'https://p.scdn.co/mp3-preview/5397a9e2a0a8d818ba82f1f6b19acfc7f52ed001'  // Don't Know Why
   ];
 
-  // Start with Spotify hidden
-  document.getElementById('spotifyPanel').style.height = '0px';
-  document.getElementById('spotifyPanel').style.opacity = '0';
-  document.getElementById('spotifyPanel').style.overflow = 'hidden';
-
-  window.switchTrack = function(idx){
-    document.getElementById('spotifyFrame').src = tracks[idx];
+  function loadTrack(idx){
+    currentTrack = idx;
+    audio.src = tracks[idx];
+    audio.load();
+    // Update dots
     document.querySelectorAll('.s-track-btn').forEach(function(b,i){
       b.style.opacity = i === idx ? '1' : '0.3';
     });
-    if(!spotifyVisible){ toggleSpotifyPanel(); }
+  }
+
+  // When track ends — play next
+  audio.addEventListener('ended', function(){
+    var next = (currentTrack + 1) % tracks.length;
+    loadTrack(next);
+    audio.play();
+  });
+
+  // Load first track
+  loadTrack(0);
+  audio.volume = 0.4;
+
+  // Try autoplay
+  var autoplayPromise = audio.play();
+  if(autoplayPromise !== undefined){
+    autoplayPromise.then(function(){
+      bgPlaying = true;
+      overlay.style.display = 'none';
+      control.style.display = 'flex';
+      updateBtn();
+    }).catch(function(){
+      overlay.style.display = 'flex';
+    });
+  }
+
+  // Click overlay to start
+  overlay.addEventListener('click', function(){
+    audio.play().then(function(){
+      bgPlaying = true;
+      overlay.style.opacity = '0';
+      setTimeout(function(){ overlay.style.display = 'none'; }, 500);
+      control.style.display = 'flex';
+      updateBtn();
+    });
+  });
+
+  function updateBtn(){
+    document.getElementById('bgMusicLabel').textContent = bgPlaying ? 'Пауза' : 'Играть';
+    document.getElementById('bgMusicIcon').style.color = bgPlaying ? '#6C5CE7' : 'rgba(255,255,255,0.6)';
+  }
+
+  window.toggleBgMusic = function(){
+    if(bgPlaying){
+      audio.pause();
+      bgPlaying = false;
+    } else {
+      audio.play();
+      bgPlaying = true;
+    }
+    updateBtn();
   };
 
-  window.toggleSpotifyPanel = function(){
-    var panel = document.getElementById('spotifyPanel');
-    spotifyVisible = !spotifyVisible;
-    panel.style.height = spotifyVisible ? '152px' : '0px';
-    panel.style.opacity = spotifyVisible ? '1' : '0';
+  window.setBgVolume = function(val){
+    audio.volume = val / 100;
+  };
+
+  window.switchTrack = function(idx){
+    loadTrack(idx);
+    audio.play();
+    bgPlaying = true;
+    updateBtn();
   };
 })();
 </script>
