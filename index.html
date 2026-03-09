@@ -2416,26 +2416,72 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 })();
 </script>
 
-<!-- ==================== AMBIENT MUSIC (Spotify) ==================== -->
+<!-- ==================== AMBIENT MUSIC ==================== -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://cdn.pixabay.com/audio/2024/11/01/audio_ea64e3b498.mp3" type="audio/mpeg">
+</audio>
+
 <div id="musicControl" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
-  <div id="spotifyPlayer" style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3);transition:all .3s;width:300px;height:180px;">
-    <iframe style="border:0;width:100%;height:100%;" src="https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0" id="spotifyFrame" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <div style="display:flex;justify-content:center;gap:6px;padding:6px;background:#181818;">
-      <button onclick="switchTrack(0)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:1;"></button>
-      <button onclick="switchTrack(1)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(2)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(3)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-      <button onclick="switchTrack(4)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
-    </div>
+  <div id="spotifyPanel" style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3);transition:all .3s;width:300px;height:152px;">
+    <iframe style="border:0;width:100%;height:152px;" src="https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0" id="spotifyFrame" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
-  <button onclick="toggleMusicPanel()" style="width:36px;height:36px;border-radius:10px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;">
-    <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"><path d="M2 4h12M2 8h8M2 12h10"/><circle cx="13" cy="10" r="2" fill="rgba(108,92,231,0.8)" stroke="none"/></svg>
-  </button>
+  <div style="display:flex;align-items:center;gap:6px;">
+    <div style="display:flex;gap:4px;">
+      <button onclick="switchTrack(0)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:1;"></button>
+      <button onclick="switchTrack(1)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+      <button onclick="switchTrack(2)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+      <button onclick="switchTrack(3)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+      <button onclick="switchTrack(4)" class="s-track-btn" style="width:7px;height:7px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+    </div>
+    <button id="bgMusicBtn" onclick="toggleBgMusic()" style="padding:6px 12px;border-radius:8px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s;font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.6);">
+      <svg id="bgMusicIcon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6v4M4 4v8M7 2v12M10 5v6M13 7v2"/></svg>
+      <span id="bgMusicLabel">Вкл</span>
+    </button>
+    <input id="bgMusicVol" type="range" min="0" max="100" value="25" oninput="setBgVolume(this.value)" style="width:60px;height:3px;accent-color:#6C5CE7;cursor:pointer;">
+    <button onclick="toggleSpotifyPanel()" style="width:28px;height:28px;border-radius:8px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;justify-content:center;">
+      <svg width="12" height="12" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"><path d="M1 3h10M1 6h6M1 9h8"/></svg>
+    </button>
+  </div>
 </div>
 
 <script>
 (function(){
-  var playerVisible = true;
+  // === Background ambient audio ===
+  var bgAudio = document.getElementById('bgMusic');
+  var bgPlaying = false;
+  bgAudio.volume = 0.25;
+
+  function startBgMusic(){
+    bgAudio.play().then(function(){
+      bgPlaying = true;
+      document.getElementById('bgMusicLabel').textContent = 'Выкл';
+      document.getElementById('bgMusicIcon').style.color = '#6C5CE7';
+    }).catch(function(){});
+  }
+
+  // Auto-start on first user interaction
+  document.addEventListener('click', function autoStart(){
+    if(!bgPlaying){ startBgMusic(); }
+    document.removeEventListener('click', autoStart);
+  });
+
+  window.toggleBgMusic = function(){
+    if(bgPlaying){
+      bgAudio.pause();
+      bgPlaying = false;
+      document.getElementById('bgMusicLabel').textContent = 'Вкл';
+      document.getElementById('bgMusicIcon').style.color = 'rgba(255,255,255,0.6)';
+    } else {
+      startBgMusic();
+    }
+  };
+
+  window.setBgVolume = function(val){
+    bgAudio.volume = val / 100;
+  };
+
+  // === Spotify player ===
+  var spotifyVisible = false;
   var tracks = [
     'https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0',
     'https://open.spotify.com/embed/track/7cJ3ELhDP4bxThf4HBwG6h?utm_source=generator&theme=0',
@@ -2443,22 +2489,25 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
     'https://open.spotify.com/embed/track/0LhOsy5GSiEj1dRsnk0KHA?utm_source=generator&theme=0',
     'https://open.spotify.com/embed/track/1zNXF2svmdlNxfS5XeNUgr?utm_source=generator&theme=0'
   ];
-  var currentTrack = 0;
+
+  // Start with Spotify hidden
+  document.getElementById('spotifyPanel').style.height = '0px';
+  document.getElementById('spotifyPanel').style.opacity = '0';
+  document.getElementById('spotifyPanel').style.overflow = 'hidden';
 
   window.switchTrack = function(idx){
-    currentTrack = idx;
     document.getElementById('spotifyFrame').src = tracks[idx];
     document.querySelectorAll('.s-track-btn').forEach(function(b,i){
       b.style.opacity = i === idx ? '1' : '0.3';
     });
+    if(!spotifyVisible){ toggleSpotifyPanel(); }
   };
 
-  window.toggleMusicPanel = function(){
-    var player = document.getElementById('spotifyPlayer');
-    playerVisible = !playerVisible;
-    player.style.width = playerVisible ? '300px' : '0px';
-    player.style.height = playerVisible ? '180px' : '0px';
-    player.style.opacity = playerVisible ? '1' : '0';
+  window.toggleSpotifyPanel = function(){
+    var panel = document.getElementById('spotifyPanel');
+    spotifyVisible = !spotifyVisible;
+    panel.style.height = spotifyVisible ? '152px' : '0px';
+    panel.style.opacity = spotifyVisible ? '1' : '0';
   };
 })();
 </script>
