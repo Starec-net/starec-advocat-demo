@@ -2496,6 +2496,8 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
   function loadTrack(idx){
     currentTrack = idx;
+    audio.pause();
+    audio.currentTime = 0;
     audio.src = tracks[idx];
     audio.load();
     // Update dots
