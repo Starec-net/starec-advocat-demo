@@ -407,27 +407,38 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
           <div class="l-stat-pill"><strong>24K+</strong><span>страниц</span></div>
         </div>
       </div>
-      <div class="l-glass-card">
-        <div class="l-glass-search">
-          <svg width="18" height="18" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M13 13l4 4"/></svg>
-          <span>Поиск по материалам дела...</span>
+      <div class="l-glass-card" style="padding:32px 28px;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;color:#fff;letter-spacing:.03em;">Единая экосистема</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px;">5 кабинетов, один цикл</div>
         </div>
-        <div class="l-glass-results">
-          <div class="l-glass-result">
-            <div class="l-glass-result-icon"><svg width="18" height="18" fill="none" stroke="rgba(108,92,231,0.8)" stroke-width="2"><rect x="3" y="3" width="12" height="14" rx="2"/><path d="M7 7h4M7 10h4"/></svg></div>
-            <div class="l-glass-result-text"><strong>Протокол допроса Иванова А.С.</strong><span>Том 2, стр. 45-52</span></div>
-            <div class="l-glass-result-badge l-badge-green">100% OCR</div>
+        <!-- Cycle visualization -->
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(108,92,231,0.15);border:1px solid rgba(108,92,231,0.3);">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6C5CE7,#4834d4);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="12" height="9" rx="2"/><path d="M6 5V3.5a3 3 0 016 0V5"/></svg></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff;">Адвокат</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Ведёт дело, анализирует с AI</div></div>
           </div>
-          <div class="l-glass-result">
-            <div class="l-glass-result-icon"><svg width="18" height="18" fill="none" stroke="rgba(108,92,231,0.8)" stroke-width="2"><path d="M4 4h10M4 8h7M4 12h10"/></svg></div>
-            <div class="l-glass-result-text"><strong>Заключение экспертизы No 142</strong><span>Том 3, стр. 12-28</span></div>
-            <div class="l-glass-result-badge l-badge-violet">Анализ</div>
+          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(0,212,170,0.1);border:1px solid rgba(0,212,170,0.2);">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#00D4AA,#00b894);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="12" height="12" rx="2"/><path d="M3 8h12"/></svg></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff;">Сканер</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Оцифровывает тома, отправляет</div></div>
           </div>
-          <div class="l-glass-result">
-            <div class="l-glass-result-icon"><svg width="18" height="18" fill="none" stroke="rgba(108,92,231,0.8)" stroke-width="2"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></div>
-            <div class="l-glass-result-text"><strong>Противоречие в показаниях</strong><span>Том 2 vs Том 5</span></div>
-            <div class="l-glass-result-badge l-badge-yellow">Внимание</div>
+          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(116,185,255,0.1);border:1px solid rgba(116,185,255,0.2);">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#74b9ff,#0984e3);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="9" cy="7" r="4"/><path d="M3 17v-1a6 6 0 0112 0v1"/></svg></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff;">Подзащитный</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Следит за ходом дела</div></div>
           </div>
+          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(253,121,168,0.1);border:1px solid rgba(253,121,168,0.2);">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#fd79a8,#e84393);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="1.8"><path d="M15 11a2 2 0 01-2 2H7l-3 3V5a2 2 0 012-2h7a2 2 0 012 2z"/></svg></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff;">Консультация</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">AI-юрист отвечает на вопросы</div></div>
+          </div>
+          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:14px;">&#8595;</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;background:rgba(253,203,110,0.1);border:1px solid rgba(253,203,110,0.2);">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#ffeaa7,#fdcb6e);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="18" height="18" fill="none" stroke="rgba(60,40,20,0.8)" stroke-width="1.8"><polygon points="9,2 11,7 16,7 12,10 13,15 9,12 5,15 6,10 2,7 7,7"/></svg></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff;">Витрина юристов</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Каталог специалистов</div></div>
+          </div>
+          <div style="text-align:center;color:rgba(255,255,255,0.2);font-size:11px;padding:4px 0;">&#8635; цикл замкнут</div>
         </div>
       </div>
     </div>
@@ -462,7 +473,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <div class="l-feature-card">
           <div class="l-feature-icon"><svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
           <h3>База законов нового поколения</h3>
-          <p>124 закона РФ с умным поиском, сравнение редакций статей, судебная практика из СУДАКТ. Быстрее, удобнее и умнее классических справочных систем.</p>
+          <p>Полная база законодательства РФ с умным поиском, сравнение редакций статей, судебная практика из СУДАКТ. Быстрее, удобнее и умнее классических справочных систем.</p>
         </div>
         <div class="l-feature-card">
           <div class="l-feature-icon"><svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg></div>
@@ -1367,8 +1378,8 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <!-- Stats -->
         <div style="display:flex;gap:20px;margin-bottom:28px;">
           <div style="padding:14px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
-            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;color:var(--heading);">124</div>
-            <div style="font-size:12px;color:var(--text-light);">закона РФ</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;color:var(--heading);">Все</div>
+            <div style="font-size:12px;color:var(--text-light);">законы РФ</div>
           </div>
           <div style="padding:14px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-align:center;">
             <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;color:var(--heading);">47K+</div>
@@ -2402,6 +2413,51 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
   // Set initial state
   history.replaceState({screen:'landing'}, '', '');
 
+})();
+</script>
+
+<!-- ==================== AMBIENT MUSIC (Spotify) ==================== -->
+<div id="musicControl" style="position:fixed;bottom:20px;right:20px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+  <div id="spotifyPlayer" style="border-radius:12px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.3);transition:all .3s;width:300px;height:180px;">
+    <iframe style="border:0;width:100%;height:100%;" src="https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0" id="spotifyFrame" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div style="display:flex;justify-content:center;gap:6px;padding:6px;background:#181818;">
+      <button onclick="switchTrack(0)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:1;"></button>
+      <button onclick="switchTrack(1)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+      <button onclick="switchTrack(2)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+      <button onclick="switchTrack(3)" class="s-track-btn" style="width:8px;height:8px;border-radius:50%;border:none;background:#6C5CE7;cursor:pointer;opacity:0.3;"></button>
+    </div>
+  </div>
+  <button onclick="toggleMusicPanel()" style="width:36px;height:36px;border-radius:10px;border:none;background:rgba(12,6,22,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;">
+    <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"><path d="M2 4h12M2 8h8M2 12h10"/><circle cx="13" cy="10" r="2" fill="rgba(108,92,231,0.8)" stroke="none"/></svg>
+  </button>
+</div>
+
+<script>
+(function(){
+  var playerVisible = true;
+  var tracks = [
+    'https://open.spotify.com/embed/track/2iHLgMvxvtxcNxjqcfTrKh?utm_source=generator&theme=0',
+    'https://open.spotify.com/embed/track/7cJ3ELhDP4bxThf4HBwG6h?utm_source=generator&theme=0',
+    'https://open.spotify.com/embed/track/3fC5g0ntDhqtk1S0YjkWpH?utm_source=generator&theme=0',
+    'https://open.spotify.com/embed/track/0LhOsy5GSiEj1dRsnk0KHA?utm_source=generator&theme=0'
+  ];
+  var currentTrack = 0;
+
+  window.switchTrack = function(idx){
+    currentTrack = idx;
+    document.getElementById('spotifyFrame').src = tracks[idx];
+    document.querySelectorAll('.s-track-btn').forEach(function(b,i){
+      b.style.opacity = i === idx ? '1' : '0.3';
+    });
+  };
+
+  window.toggleMusicPanel = function(){
+    var player = document.getElementById('spotifyPlayer');
+    playerVisible = !playerVisible;
+    player.style.width = playerVisible ? '300px' : '0px';
+    player.style.height = playerVisible ? '180px' : '0px';
+    player.style.opacity = playerVisible ? '1' : '0';
+  };
 })();
 </script>
 </body>
