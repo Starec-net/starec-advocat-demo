@@ -3,146 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STAREC — Legal Tech Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>STAREC — Legal Tech Monolith</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#FAFBFF;--dark:#0C0616;--violet:#6C5CE7;--cyan:#00D4AA;
-  --gradient:linear-gradient(135deg,#6C5CE7,#00D4AA);
-  --text:#334155;--text-light:#64748B;--heading:#0F0A1A;
-  --surface:#FFFFFF;--border:#E8E5F0;
+  --concrete:#F5F5F0;--concrete-light:#E8E6E1;--charcoal:#1A1A1A;
+  --mid:#888888;--light:#CCCCCC;--copper:#B87333;--body-bg:#E0DED9;
+  --bg:#F5F5F0;--dark:#1A1A1A;--violet:#1A1A1A;--cyan:#B87333;
+  --gradient:linear-gradient(135deg,#1A1A1A,#333);
+  --text:#1A1A1A;--text-light:#888;--heading:#1A1A1A;
+  --surface:#F5F5F0;--border:#E8E6E1;
   --sidebar-w:240px;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:16px;scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif;color:var(--heading);font-weight:600;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--body-bg);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400;}
+h1,h2,h3,h4,h5,h6{font-family:'Inter',sans-serif;color:var(--heading);font-weight:900;text-transform:uppercase;letter-spacing:-0.04em;}
 a{text-decoration:none;color:inherit;}
 button{cursor:pointer;border:none;background:none;font-family:'Inter',sans-serif;}
 input,select,textarea{font-family:'Inter',sans-serif;outline:none;}
 ::-webkit-scrollbar{width:6px;height:6px;}
 ::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:#C8C2D6;border-radius:3px;}
-::-webkit-scrollbar-thumb:hover{background:#A09AB0;}
+::-webkit-scrollbar-thumb{background:var(--light);border-radius:0;}
+::-webkit-scrollbar-thumb:hover{background:var(--mid);}
 
 /* ======================== LANDING ======================== */
 #landing{display:block;}
-.l-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,6,22,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(108,92,231,0.15);}
-.l-nav-logo{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:1px;}
+.l-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:60px;display:flex;align-items:center;justify-content:space-between;background:var(--concrete);border-bottom:1px solid var(--light);}
+.l-nav-logo{display:flex;align-items:center;gap:12px;}
+.l-nav-logo::before{content:'S';display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:var(--charcoal);color:var(--concrete);font-family:'Inter',sans-serif;font-weight:900;font-size:18px;letter-spacing:-0.04em;}
+.l-nav-logo::after{content:'STAREC';font-family:'Inter',sans-serif;font-weight:900;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal);}
 .l-nav-links{display:flex;gap:32px;align-items:center;}
-.l-nav-links a{color:rgba(255,255,255,0.7);font-size:14px;font-weight:500;transition:color .2s;}
-.l-nav-links a:hover{color:#fff;}
-.l-nav-btn{padding:10px 24px;border-radius:10px;font-size:14px;font-weight:600;color:#fff;background:var(--gradient);transition:transform .2s,box-shadow .2s;}
-.l-nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(108,92,231,0.4);}
+.l-nav-links a{font-family:'Space Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--mid);transition:color .2s;text-decoration:none;}
+.l-nav-links a:hover{color:var(--charcoal);}
+.l-nav-btn{padding:8px 18px;border-radius:0;font-family:'Space Mono',monospace;font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:2px;color:#fff;background:var(--copper);transition:opacity .2s;}
+.l-nav-btn:hover{opacity:0.85;}
 
-.l-hero{min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 48px 80px;}
-.l-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(108,92,231,0.15),transparent 70%);pointer-events:none;}
-.l-hero::after{content:'';position:absolute;bottom:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,170,0.1),transparent 70%);pointer-events:none;}
-.l-hero-inner{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;}
-.l-hero-tag{display:inline-block;padding:6px 16px;border-radius:20px;border:1px solid rgba(108,92,231,0.4);color:var(--violet);font-size:13px;font-weight:600;margin-bottom:24px;letter-spacing:1px;}
-.l-hero-title{font-family:'Outfit',sans-serif;font-size:72px;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.05;margin-bottom:16px;}
-.l-hero-subtitle{font-family:'Outfit',sans-serif;font-size:22px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:20px;}
-.l-hero-lead{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.7;margin-bottom:36px;max-width:480px;}
+.l-hero{min-height:calc(100vh - 60px);background:var(--concrete);position:relative;overflow:hidden;display:flex;align-items:center;padding:80px 80px 60px;}
+.l-hero::before{content:'S';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(280px,38vw,520px);color:var(--charcoal);opacity:0.055;pointer-events:none;line-height:1;letter-spacing:-0.06em;z-index:0;}
+.l-hero::after{content:none;}
+.l-hero-inner{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;}
+.l-hero-tag{display:inline-block;padding:6px 12px;border-radius:0;border:1px solid var(--light);color:var(--mid);font-family:'Space Mono',monospace;font-size:10px;font-weight:400;margin-bottom:32px;letter-spacing:2.5px;text-transform:uppercase;}
+.l-hero-title{font-family:'Inter',sans-serif;font-size:clamp(96px,14vw,160px);font-weight:900;color:var(--charcoal);line-height:0.85;margin-bottom:24px;-webkit-text-fill-color:var(--charcoal);background:none;letter-spacing:-0.06em;text-transform:uppercase;}
+.l-hero-copper{width:120px;height:2px;background:var(--copper);margin-bottom:28px;}
+.l-hero-subtitle{font-family:'Inter',sans-serif;font-size:16px;font-weight:400;color:var(--mid);margin-bottom:24px;font-style:normal;line-height:1.6;}
+.l-hero-lead{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:40px;max-width:440px;}
 .l-hero-stats{display:flex;gap:16px;flex-wrap:wrap;}
-.l-stat-pill{padding:10px 20px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(10px);}
-.l-stat-pill strong{display:block;font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.l-stat-pill span{font-size:12px;color:rgba(255,255,255,0.45);}
+.l-stat-pill{padding:12px 24px;border-radius:0;background:var(--concrete-light);border:none;}
+.l-stat-pill strong{display:block;font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:var(--charcoal);background:none;-webkit-text-fill-color:var(--charcoal);letter-spacing:-0.04em;}
+.l-stat-pill span{font-family:'Space Mono',monospace;font-size:10px;color:var(--mid);letter-spacing:2px;text-transform:uppercase;}
 
-.l-glass-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px;backdrop-filter:blur(20px);position:relative;overflow:hidden;}
-.l-glass-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);}
-.l-glass-search{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 18px;margin-bottom:24px;}
+.l-glass-card{background:var(--charcoal);border:none;border-radius:0;padding:32px;position:relative;overflow:hidden;}
+.l-glass-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--copper);}
+.l-glass-search{display:none;}
 .l-glass-search svg{flex-shrink:0;opacity:0.4;}
-.l-glass-search span{color:rgba(255,255,255,0.3);font-size:14px;}
-.l-glass-results{display:flex;flex-direction:column;gap:12px;}
-.l-glass-result{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);}
-.l-glass-result-icon{width:36px;height:36px;border-radius:8px;background:rgba(108,92,231,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.l-glass-search span{color:rgba(255,255,255,0.35);font-size:14px;}
+.l-glass-results{display:flex;flex-direction:column;gap:0;}
+.l-glass-result{display:flex;align-items:flex-start;gap:12px;padding:20px 0;border-radius:0;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+.l-glass-result:first-child{border-top:1px solid rgba(255,255,255,0.08);}
+.l-glass-result-icon{display:none;}
 .l-glass-result-text{flex:1;}
-.l-glass-result-text strong{display:block;color:rgba(255,255,255,0.85);font-size:13px;font-weight:600;}
+.l-glass-result-text strong{display:block;color:rgba(255,255,255,0.85);font-size:14px;font-weight:400;line-height:1.5;}
 .l-glass-result-text span{font-size:11px;color:rgba(255,255,255,0.35);}
-.l-glass-result-badge{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;}
-.l-badge-green{background:rgba(0,212,170,0.15);color:var(--cyan);}
-.l-badge-violet{background:rgba(108,92,231,0.15);color:var(--violet);}
-.l-badge-yellow{background:rgba(255,193,7,0.15);color:#FFC107;}
+.l-glass-result-badge{padding:4px 10px;border-radius:0;font-size:11px;font-weight:600;}
+.l-badge-green{background:rgba(184,115,51,0.15);color:var(--copper);}
+.l-badge-violet{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);}
+.l-badge-yellow{background:rgba(184,115,51,0.1);color:var(--copper);}
 
 /* Features */
-.l-features{padding:100px 48px;background:var(--bg);}
+.l-features{padding:100px 80px 0;background:var(--concrete);position:relative;overflow:hidden;}
 .l-features-inner{max-width:1280px;margin:0 auto;}
-.l-section-tag{display:inline-block;padding:5px 14px;border-radius:16px;border:1px solid var(--border);color:var(--violet);font-size:12px;font-weight:600;margin-bottom:16px;letter-spacing:1px;}
-.l-section-title{font-size:36px;font-weight:700;margin-bottom:12px;}
-.l-section-sub{font-size:16px;color:var(--text-light);margin-bottom:48px;max-width:500px;}
-.l-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.l-feature-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;transition:transform .2s,box-shadow .2s;}
-.l-feature-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(108,92,231,0.08);}
-.l-feature-icon{width:48px;height:48px;border-radius:12px;background:var(--gradient);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
-.l-feature-card h3{font-size:18px;margin-bottom:8px;}
-.l-feature-card p{font-size:14px;color:var(--text-light);line-height:1.6;}
+.l-section-tag{display:inline-block;padding:5px 14px;border-radius:0;border:1px solid var(--light);color:var(--mid);font-family:'Space Mono',monospace;font-size:10px;font-weight:400;margin-bottom:16px;letter-spacing:2.5px;text-transform:uppercase;}
+.l-section-title{font-family:'Inter',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:900;margin-bottom:12px;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.9;}
+.l-section-sub{font-size:14px;color:var(--mid);margin-bottom:48px;max-width:500px;line-height:1.65;}
+.l-features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--body-bg);}
+.l-feature-card{background:var(--concrete);border:none;border-radius:0;padding:56px 48px;transition:none;position:relative;overflow:hidden;}
+.l-feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--copper);}
+.l-feature-card:hover{transform:none;box-shadow:none;}
+.l-feature-icon{width:48px;height:48px;border-radius:0;background:none;display:none;}
+.l-feature-card h3{font-family:'Inter',sans-serif;font-size:clamp(20px,2.5vw,32px);font-weight:900;margin-bottom:12px;text-transform:uppercase;letter-spacing:-0.04em;line-height:0.95;}
+.l-feature-card p{font-size:13px;color:var(--mid);line-height:1.65;max-width:340px;}
 
 /* How it works */
-.l-how{padding:100px 48px;background:var(--dark);position:relative;overflow:hidden;}
-.l-how::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(108,92,231,0.08),transparent 70%);pointer-events:none;}
-.l-how-inner{max-width:1280px;margin:0 auto;text-align:center;position:relative;z-index:1;}
-.l-how .l-section-tag{border-color:rgba(108,92,231,0.3);}
-.l-how .l-section-title{color:#fff;}
-.l-how .l-section-sub{color:rgba(255,255,255,0.5);margin-left:auto;margin-right:auto;}
-.l-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
-.l-step{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:40px 32px;text-align:center;backdrop-filter:blur(10px);}
-.l-step-num{width:48px;height:48px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#fff;}
-.l-step h3{color:#fff;font-size:18px;margin-bottom:8px;}
-.l-step p{color:rgba(255,255,255,0.45);font-size:14px;line-height:1.6;}
+.l-how{padding:100px 80px;background:var(--concrete-light);position:relative;overflow:hidden;}
+.l-how::before{content:'HOW';position:absolute;font-family:'Inter',sans-serif;font-weight:900;font-size:200px;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--charcoal);opacity:0.04;pointer-events:none;letter-spacing:-0.06em;line-height:1;}
+.l-how-inner{max-width:1280px;margin:0 auto;text-align:left;position:relative;z-index:1;}
+.l-how .l-section-tag{border-color:var(--light);}
+.l-how .l-section-title{color:var(--charcoal);}
+.l-how .l-section-sub{color:var(--mid);margin-left:0;margin-right:0;}
+.l-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:48px;background:var(--body-bg);}
+.l-step{background:var(--concrete-light);border:none;border-radius:0;padding:48px 40px;text-align:left;position:relative;overflow:hidden;}
+.l-step-num{width:auto;height:auto;border-radius:0;background:none;display:flex;align-items:center;gap:10px;margin:0 0 24px 0;font-family:'Space Mono',monospace;font-size:10px;font-weight:400;color:var(--copper);letter-spacing:3px;text-transform:uppercase;}
+.l-step-num::before{content:'';display:block;width:24px;height:1px;background:var(--copper);}
+.l-step h3{color:var(--charcoal);font-family:'Inter',sans-serif;font-size:22px;font-weight:900;margin-bottom:16px;text-transform:uppercase;letter-spacing:-0.04em;}
+.l-step p{color:var(--mid);font-size:13px;line-height:1.65;}
 
 /* CTA */
-.l-cta{padding:100px 48px;background:var(--bg);text-align:center;}
-.l-cta-inner{max-width:640px;margin:0 auto;}
-.l-cta-title{font-size:36px;margin-bottom:16px;}
-.l-cta-text{font-size:16px;color:var(--text-light);margin-bottom:36px;line-height:1.7;}
-.l-cta-btn{display:inline-block;padding:16px 48px;border-radius:12px;font-size:16px;font-weight:600;color:#fff;background:var(--gradient);transition:transform .2s,box-shadow .2s;}
-.l-cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,92,231,0.3);}
+.l-cta{padding:100px 80px;background:var(--charcoal);text-align:center;position:relative;overflow:hidden;}
+.l-cta::before{content:'START';position:absolute;font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(120px,18vw,300px);top:50%;left:50%;transform:translate(-50%,-50%);color:white;opacity:0.03;pointer-events:none;letter-spacing:-0.06em;}
+.l-cta-inner{max-width:640px;margin:0 auto;position:relative;z-index:1;}
+.l-cta-title{font-family:'Inter',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:900;margin-bottom:16px;text-transform:uppercase;letter-spacing:-0.04em;color:white;}
+.l-cta-text{font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:36px;line-height:1.7;}
+.l-cta-btn{display:inline-block;padding:12px 32px;border-radius:0;font-family:'Space Mono',monospace;font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:2px;color:#fff;background:var(--copper);transition:opacity .2s;}
+.l-cta-btn:hover{opacity:0.85;}
 
 /* ======================== CABINET SELECT ======================== */
-#cabinetSelect{display:none;min-height:100vh;background:var(--dark);position:relative;overflow:hidden;}
-#cabinetSelect::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(108,92,231,0.12),transparent 70%);pointer-events:none;}
-#cabinetSelect::after{content:'';position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,212,170,0.08),transparent 70%);pointer-events:none;}
+#cabinetSelect{display:none;min-height:100vh;background:var(--concrete);position:relative;overflow:hidden;}
+#cabinetSelect::before{content:'SELECT';position:absolute;font-family:'Inter',sans-serif;font-weight:900;font-size:clamp(150px,22vw,350px);top:50%;left:50%;transform:translate(-50%,-50%);color:var(--charcoal);opacity:0.04;pointer-events:none;letter-spacing:-0.06em;}
+#cabinetSelect::after{content:none;}
 .s-cab-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 32px;}
-.s-cab-logo{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;letter-spacing:.04em;}
-.s-cab-title{font-family:'Outfit',sans-serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:52px;letter-spacing:-.01em;}
-.s-cab-grid{display:flex;gap:36px;margin-bottom:52px;justify-content:center;flex-wrap:wrap;}
-.s-cab-card{width:140px;text-align:center;cursor:pointer;transition:transform .25s ease;}
-.s-cab-card:hover{transform:scale(1.08);}
-.s-cab-card:active{transform:scale(0.96);}
-.s-cab-card-icon{width:88px;height:88px;border-radius:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.15);transition:box-shadow .25s;}
-.s-cab-card:hover .s-cab-card-icon{box-shadow:0 12px 40px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.2);}
-.s-cab-icon-advocate{background:linear-gradient(145deg,#6C5CE7,#4834d4);}
-.s-cab-icon-scanner{background:linear-gradient(145deg,#00D4AA,#00b894);}
-.s-cab-icon-defendant{background:linear-gradient(145deg,#74b9ff,#0984e3);}
-.s-cab-icon-consult{background:linear-gradient(145deg,#fd79a8,#e84393);}
-.s-cab-icon-lawyer{background:linear-gradient(145deg,#ffeaa7,#fdcb6e);}
-.s-cab-card h3{color:#fff;font-size:13px;font-weight:600;margin-bottom:4px;letter-spacing:.01em;}
-.s-cab-card p{color:rgba(255,255,255,0.35);font-size:11px;line-height:1.4;display:none;}
+.s-cab-logo{font-family:'Inter',sans-serif;font-size:14px;font-weight:900;color:var(--charcoal);-webkit-text-fill-color:var(--charcoal);background:none;margin-bottom:4px;letter-spacing:0.1em;text-transform:uppercase;}
+.s-cab-title{font-family:'Inter',sans-serif;font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--charcoal);margin-bottom:8px;letter-spacing:-0.04em;text-transform:uppercase;}
+.s-cab-copper{width:80px;height:2px;background:var(--copper);margin-bottom:52px;}
+.s-cab-grid{display:flex;gap:3px;margin-bottom:52px;justify-content:center;flex-wrap:wrap;background:var(--body-bg);}
+.s-cab-card{width:140px;text-align:center;cursor:pointer;transition:opacity .25s ease;background:var(--concrete);padding:24px 12px;}
+.s-cab-card:hover{opacity:0.8;}
+.s-cab-card:active{opacity:0.6;}
+.s-cab-card-icon{width:88px;height:88px;border-radius:0;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:none;border:none;transition:none;}
+.s-cab-card:hover .s-cab-card-icon{box-shadow:none;}
+.s-cab-icon-advocate{background:var(--charcoal);}
+.s-cab-icon-scanner{background:var(--charcoal);}
+.s-cab-icon-defendant{background:var(--charcoal);}
+.s-cab-icon-consult{background:var(--charcoal);}
+.s-cab-icon-lawyer{background:var(--charcoal);}
+.s-cab-card h3{color:var(--charcoal);font-family:'Inter',sans-serif;font-size:12px;font-weight:900;margin-bottom:4px;letter-spacing:-0.02em;text-transform:uppercase;}
+.s-cab-card p{color:var(--mid);font-family:'Space Mono',monospace;font-size:9px;line-height:1.4;display:none;}
 .s-cab-grid-bottom{display:flex;gap:36px;margin-bottom:52px;justify-content:center;}
-.s-cab-exit{color:rgba(255,255,255,0.3);font-size:13px;cursor:pointer;transition:color .2s;margin-top:8px;}
-.s-cab-exit:hover{color:rgba(255,255,255,0.7);}
+.s-cab-exit{font-family:'Space Mono',monospace;font-size:10px;color:var(--mid);cursor:pointer;transition:color .2s;margin-top:8px;letter-spacing:2px;text-transform:uppercase;}
+.s-cab-exit:hover{color:var(--charcoal);}
 
 /* ======================== APP LAYOUT ======================== */
 .s-app{display:none;height:100vh;overflow:hidden;}
 .s-app.active{display:flex;}
-.s-sidebar{width:var(--sidebar-w);background:var(--dark);display:flex;flex-direction:column;flex-shrink:0;border-right:1px solid rgba(255,255,255,0.06);}
+.s-sidebar{width:var(--sidebar-w);background:var(--charcoal);display:flex;flex-direction:column;flex-shrink:0;border-right:none;}
 .s-sidebar-top{padding:20px 16px 12px;display:flex;align-items:center;gap:10px;cursor:pointer;}
-.s-sidebar-logo{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.s-sidebar-badge{font-size:10px;padding:3px 8px;border-radius:6px;background:rgba(108,92,231,0.2);color:var(--violet);font-weight:600;}
+.s-sidebar-logo{font-family:'Inter',sans-serif;font-size:14px;font-weight:900;color:#FFFFFF;-webkit-text-fill-color:#FFFFFF;background:none;letter-spacing:0.1em;text-transform:uppercase;}
+.s-sidebar-badge{font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;border-radius:0;background:rgba(184,115,51,0.2);color:var(--copper);font-weight:400;letter-spacing:1px;text-transform:uppercase;}
 .s-sidebar-nav{flex:1;overflow-y:auto;padding:8px 8px 16px;}
-.s-sidebar-sep{height:1px;background:rgba(255,255,255,0.06);margin:8px 8px;}
+.s-sidebar-sep{height:1px;background:rgba(255,255,255,0.08);margin:8px 8px;}
 .s-nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;color:rgba(255,255,255,0.5);font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;margin-bottom:2px;position:relative;}
 .s-nav-item:hover{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.8);}
-.s-nav-item.active{background:rgba(108,92,231,0.15);color:#fff;}
+.s-nav-item.active{background:rgba(184,115,51,0.15);color:#fff;border-left:2px solid var(--copper);}
 .s-nav-item svg{flex-shrink:0;opacity:0.6;}
 .s-nav-item.active svg{opacity:1;}
-.s-nav-dot{position:absolute;right:12px;width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+.s-nav-dot{position:absolute;right:12px;width:6px;height:6px;border-radius:50%;background:var(--copper);}
 .s-sidebar-bottom{padding:12px 16px;border-top:1px solid rgba(255,255,255,0.06);}
 .s-sidebar-search{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:8px 12px;margin-bottom:12px;}
 .s-sidebar-search input{background:none;border:none;color:rgba(255,255,255,0.7);font-size:13px;width:100%;outline:none;}
 .s-sidebar-search input::placeholder{color:rgba(255,255,255,0.25);}
 .s-sidebar-user{display:flex;align-items:center;gap:10px;}
-.s-sidebar-avatar{width:34px;height:34px;border-radius:10px;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
+.s-sidebar-avatar{width:34px;height:34px;border-radius:0;background:var(--copper);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
 .s-sidebar-user-info{flex:1;min-width:0;}
 .s-sidebar-user-name{color:rgba(255,255,255,0.85);font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .s-sidebar-user-role{color:rgba(255,255,255,0.35);font-size:11px;}
@@ -150,7 +160,7 @@ input,select,textarea{font-family:'Inter',sans-serif;outline:none;}
 .s-sidebar-notif-badge{position:absolute;top:-2px;right:-2px;width:16px;height:16px;border-radius:50%;background:#EF4444;color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;}
 
 /* Main content area */
-.s-main{flex:1;overflow-y:auto;background:var(--bg);}
+.s-main{flex:1;overflow-y:auto;background:var(--concrete);}
 .s-page{display:none;padding:32px 40px;min-height:100%;}
 .s-page.active{display:block;}
 .s-page-header{margin-bottom:28px;}
@@ -158,7 +168,7 @@ input,select,textarea{font-family:'Inter',sans-serif;outline:none;}
 .s-page-sub{font-size:14px;color:var(--text-light);}
 
 /* Cards & Tables */
-.s-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin-bottom:20px;}
+.s-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:24px;margin-bottom:20px;}
 .s-card-title{font-size:16px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
 .s-table-wrap{overflow-x:auto;}
 table.s-table{width:100%;border-collapse:collapse;}
@@ -166,43 +176,43 @@ table.s-table th{text-align:left;font-size:12px;font-weight:600;color:var(--text
 table.s-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid var(--border);vertical-align:middle;}
 table.s-table tr:last-child td{border-bottom:none;}
 table.s-table tr{cursor:pointer;transition:background .15s;}
-table.s-table tr:hover{background:rgba(108,92,231,0.03);}
+table.s-table tr:hover{background:rgba(0,0,0,0.02);}
 
 .s-badge{display:inline-block;padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600;}
 .s-badge-green{background:rgba(0,212,170,0.1);color:#00B894;}
-.s-badge-blue{background:rgba(108,92,231,0.1);color:var(--violet);}
+.s-badge-blue{background:rgba(0,0,0,0.08);color:var(--copper);}
 .s-badge-yellow{background:rgba(255,193,7,0.1);color:#F59E0B;}
 .s-badge-red{background:rgba(239,68,68,0.1);color:#EF4444;}
 .s-badge-gray{background:rgba(100,116,139,0.1);color:var(--text-light);}
 
 .s-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;transition:all .2s;}
-.s-btn-primary{background:var(--gradient);color:#fff;}
-.s-btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(108,92,231,0.3);}
+.s-btn-primary{background:var(--copper);color:#fff;}
+.s-btn-primary:hover{transform:translateY(-1px);opacity:0.85;}
 .s-btn-outline{border:1px solid var(--border);color:var(--text);background:var(--surface);}
-.s-btn-outline:hover{border-color:var(--violet);color:var(--violet);}
+.s-btn-outline:hover{border-color:var(--copper);color:var(--copper);}
 .s-btn-ghost{color:var(--text-light);}
-.s-btn-ghost:hover{color:var(--violet);}
+.s-btn-ghost:hover{color:var(--copper);}
 .s-btn-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--text-light);margin-bottom:20px;cursor:pointer;transition:color .15s;}
-.s-btn-back:hover{color:var(--violet);}
+.s-btn-back:hover{color:var(--copper);}
 
 /* Stats row */
 .s-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
-.s-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 24px;}
-.s-stat-val{font-family:'Outfit',sans-serif;font-size:28px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.s-stat-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:20px 24px;}
+.s-stat-val{font-family:'Inter',sans-serif;font-size:28px;font-weight:900;color:var(--charcoal);-webkit-text-fill-color:var(--charcoal);background:none;letter-spacing:-0.04em;}
 .s-stat-label{font-size:13px;color:var(--text-light);margin-top:4px;}
 
 /* Tabs */
 .s-tabs{display:flex;gap:4px;border-bottom:1px solid var(--border);margin-bottom:24px;overflow-x:auto;padding-bottom:0;}
 .s-tab{padding:10px 16px;font-size:13px;font-weight:500;color:var(--text-light);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;}
 .s-tab:hover{color:var(--text);}
-.s-tab.active{color:var(--violet);border-bottom-color:var(--violet);}
+.s-tab.active{color:var(--copper);border-bottom-color:var(--copper);}
 
 /* Timeline */
 .s-timeline{display:flex;flex-direction:column;gap:2px;}
 .s-timeline-item{display:flex;align-items:flex-start;gap:14px;padding:12px 16px;border-radius:10px;transition:background .15s;}
-.s-timeline-item:hover{background:rgba(108,92,231,0.03);}
+.s-timeline-item:hover{background:rgba(0,0,0,0.02);}
 .s-timeline-time{font-size:13px;font-weight:600;color:var(--text-light);width:48px;flex-shrink:0;padding-top:2px;}
-.s-timeline-dot{width:10px;height:10px;border-radius:50%;background:var(--violet);margin-top:5px;flex-shrink:0;position:relative;}
+.s-timeline-dot{width:10px;height:10px;border-radius:50%;background:var(--copper);margin-top:5px;flex-shrink:0;position:relative;}
 .s-timeline-dot::after{content:'';position:absolute;top:12px;left:4px;width:2px;height:calc(100% + 16px);background:var(--border);}
 .s-timeline-item:last-child .s-timeline-dot::after{display:none;}
 .s-timeline-dot.cyan{background:var(--cyan);}
@@ -217,21 +227,21 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 .s-vol-tree{display:flex;flex-direction:column;gap:4px;}
 .s-vol-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface);}
 .s-vol-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;transition:background .15s;}
-.s-vol-header:hover{background:rgba(108,92,231,0.03);}
+.s-vol-header:hover{background:rgba(0,0,0,0.02);}
 .s-vol-chevron{transition:transform .2s;flex-shrink:0;}
 .s-vol-header.open .s-vol-chevron{transform:rotate(90deg);}
 .s-vol-name{font-size:14px;font-weight:600;flex:1;}
 .s-vol-meta{font-size:12px;color:var(--text-light);}
 .s-vol-progress{width:48px;height:4px;background:var(--border);border-radius:2px;overflow:hidden;}
-.s-vol-progress-fill{height:100%;border-radius:2px;background:var(--gradient);}
+.s-vol-progress-fill{height:100%;border-radius:2px;background:var(--copper);}
 .s-vol-docs{display:none;padding:0 16px 12px;margin-left:26px;}
 .s-vol-docs.open{display:block;}
 .s-vol-doc{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;font-size:13px;color:var(--text);cursor:pointer;transition:background .15s;}
-.s-vol-doc:hover{background:rgba(108,92,231,0.05);}
-.s-vol-doc.active{background:rgba(108,92,231,0.08);color:var(--violet);font-weight:600;}
+.s-vol-doc:hover{background:rgba(0,0,0,0.04);}
+.s-vol-doc.active{background:rgba(184,115,51,0.08);color:var(--copper);font-weight:600;}
 
 /* PDF viewer placeholder */
-.s-pdf-viewer{background:var(--surface);border:1px solid var(--border);border-radius:14px;display:flex;align-items:center;justify-content:center;min-height:500px;color:var(--text-light);font-size:14px;flex-direction:column;gap:12px;}
+.s-pdf-viewer{background:var(--surface);border:1px solid var(--border);border-radius:0;display:flex;align-items:center;justify-content:center;min-height:500px;color:var(--text-light);font-size:14px;flex-direction:column;gap:12px;}
 .s-pdf-viewer svg{opacity:0.3;}
 
 /* Chat interface */
@@ -241,75 +251,76 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 .s-chat-msg.bot{align-self:flex-start;}
 .s-chat-msg.user{align-self:flex-end;flex-direction:row-reverse;}
 .s-chat-avatar{width:32px;height:32px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;}
-.s-chat-avatar.bot-av{background:var(--gradient);}
+.s-chat-avatar.bot-av{background:var(--copper);}
 .s-chat-avatar.user-av{background:linear-gradient(135deg,#334155,#64748B);}
 .s-chat-bubble{padding:14px 18px;border-radius:14px;font-size:14px;line-height:1.6;}
 .s-chat-msg.bot .s-chat-bubble{background:var(--surface);border:1px solid var(--border);color:var(--text);}
-.s-chat-msg.user .s-chat-bubble{background:var(--gradient);color:#fff;}
+.s-chat-msg.user .s-chat-bubble{background:var(--charcoal);color:#fff;}
 .s-chat-input-area{display:flex;gap:12px;padding-top:16px;border-top:1px solid var(--border);}
 .s-chat-input{flex:1;padding:12px 18px;border-radius:12px;border:1px solid var(--border);background:var(--surface);font-size:14px;color:var(--text);}
-.s-chat-input:focus{border-color:var(--violet);}
-.s-chat-send{width:44px;height:44px;border-radius:12px;background:var(--gradient);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s;}
+.s-chat-input:focus{border-color:var(--copper);}
+.s-chat-send{width:44px;height:44px;border-radius:0;background:var(--copper);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s;}
+.s-chat-send:hover{opacity:0.85;}
 .s-chat-send:hover{transform:scale(1.05);}
 .s-chat-suggestions{display:flex;gap:8px;flex-wrap:wrap;padding-top:12px;}
 .s-chat-suggestion{padding:8px 16px;border-radius:20px;border:1px solid var(--border);font-size:13px;color:var(--text-light);cursor:pointer;transition:all .15s;background:var(--surface);}
-.s-chat-suggestion:hover{border-color:var(--violet);color:var(--violet);}
+.s-chat-suggestion:hover{border-color:var(--copper);color:var(--copper);}
 
 /* Consultation full screen */
 #consultation{display:none;height:100vh;background:var(--bg);flex-direction:column;}
 #consultation.active{display:flex;}
 .s-consult-header{padding:16px 32px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .s-consult-header-left{display:flex;align-items:center;gap:12px;}
-.s-consult-header-logo{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.s-consult-header-logo{font-family:'Inter',sans-serif;font-size:14px;font-weight:900;color:var(--charcoal);-webkit-text-fill-color:var(--charcoal);background:none;letter-spacing:0.1em;text-transform:uppercase;}
 .s-consult-header-name{font-size:14px;font-weight:600;color:var(--heading);}
-.s-consult-header-status{font-size:12px;color:var(--cyan);display:flex;align-items:center;gap:4px;}
-.s-consult-header-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cyan);}
+.s-consult-header-status{font-size:12px;color:var(--copper);display:flex;align-items:center;gap:4px;}
+.s-consult-header-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--copper);}
 .s-consult-body{flex:1;max-width:800px;margin:0 auto;width:100%;padding:24px 32px;display:flex;flex-direction:column;overflow:hidden;}
 .s-consult-messages{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:16px;padding:16px 0;}
 .s-consult-input-wrap{padding-top:16px;border-top:1px solid var(--border);}
 .s-consult-input-row{display:flex;gap:12px;margin-bottom:12px;}
 .s-consult-input{flex:1;padding:14px 20px;border-radius:14px;border:1px solid var(--border);background:var(--surface);font-size:14px;color:var(--text);}
-.s-consult-input:focus{border-color:var(--violet);}
+.s-consult-input:focus{border-color:var(--copper);}
 .s-consult-footer{padding:12px 32px;text-align:center;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:24px;}
 .s-consult-footer a{font-size:13px;color:var(--text-light);transition:color .15s;}
-.s-consult-footer a:hover{color:var(--violet);}
+.s-consult-footer a:hover{color:var(--copper);}
 
 /* Upload zone */
-.s-upload-zone{border:2px dashed var(--border);border-radius:16px;padding:60px 32px;text-align:center;background:rgba(108,92,231,0.02);transition:all .2s;cursor:pointer;}
-.s-upload-zone:hover{border-color:var(--violet);background:rgba(108,92,231,0.04);}
+.s-upload-zone{border:2px dashed var(--light);border-radius:0;padding:60px 32px;text-align:center;background:var(--concrete-light);transition:all .2s;cursor:pointer;}
+.s-upload-zone:hover{border-color:var(--copper);background:var(--concrete);}
 .s-upload-zone svg{margin-bottom:16px;opacity:0.4;}
 .s-upload-zone p{font-size:15px;color:var(--text-light);margin-bottom:4px;}
 .s-upload-zone span{font-size:13px;color:var(--text-light);opacity:0.6;}
 
 /* Progress bars */
 .s-progress{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:8px;}
-.s-progress-fill{height:100%;border-radius:3px;background:var(--gradient);transition:width .3s;}
+.s-progress-fill{height:100%;border-radius:0;background:var(--copper);transition:width .3s;}
 
 /* Form elements */
 .s-form-group{margin-bottom:20px;}
 .s-form-label{display:block;font-size:13px;font-weight:600;color:var(--heading);margin-bottom:8px;}
 .s-form-select{width:100%;padding:12px 16px;border-radius:10px;border:1px solid var(--border);background:var(--surface);font-size:14px;color:var(--text);appearance:none;cursor:pointer;}
-.s-form-select:focus{border-color:var(--violet);}
+.s-form-select:focus{border-color:var(--copper);}
 
 /* Week calendar */
-.s-week-grid{display:grid;grid-template-columns:60px repeat(5,1fr);border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);}
-.s-week-header{background:rgba(108,92,231,0.04);padding:12px 8px;text-align:center;font-size:13px;font-weight:600;border-bottom:1px solid var(--border);}
+.s-week-grid{display:grid;grid-template-columns:60px repeat(5,1fr);border:1px solid var(--border);border-radius:0;overflow:hidden;background:var(--surface);}
+.s-week-header{background:rgba(0,0,0,0.03);padding:12px 8px;text-align:center;font-size:13px;font-weight:600;border-bottom:1px solid var(--border);}
 .s-week-time{padding:8px;font-size:12px;color:var(--text-light);text-align:right;border-bottom:1px solid var(--border);border-right:1px solid var(--border);}
 .s-week-cell{padding:4px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);min-height:48px;position:relative;}
 .s-week-cell:nth-child(6n){border-right:none;}
 .s-week-event{padding:4px 8px;border-radius:6px;font-size:11px;font-weight:600;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.s-week-event.violet{background:rgba(108,92,231,0.12);color:var(--violet);}
+.s-week-event.violet{background:rgba(0,0,0,0.08);color:var(--copper);}
 .s-week-event.cyan{background:rgba(0,212,170,0.12);color:#00B894;}
 .s-week-event.red{background:rgba(239,68,68,0.12);color:#EF4444;}
 
 /* Review stars */
 .s-stars{display:flex;gap:2px;margin-bottom:8px;}
-.s-stars svg{fill:var(--violet);}
+.s-stars svg{fill:var(--copper);}
 
 /* Lawyer cards grid */
 .s-lawyers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.s-lawyer-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;display:flex;gap:16px;align-items:flex-start;}
-.s-lawyer-avatar{width:56px;height:56px;border-radius:14px;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:#fff;flex-shrink:0;}
+.s-lawyer-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:24px;display:flex;gap:16px;align-items:flex-start;}
+.s-lawyer-avatar{width:56px;height:56px;border-radius:0;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;}
 .s-lawyer-info{flex:1;}
 .s-lawyer-name{font-size:15px;font-weight:600;margin-bottom:4px;}
 .s-lawyer-spec{font-size:13px;color:var(--text-light);margin-bottom:8px;}
@@ -317,21 +328,21 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
 /* Services cards */
 .s-services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.s-service-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;transition:transform .2s;}
+.s-service-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:24px;transition:transform .2s;}
 .s-service-card:hover{transform:translateY(-2px);}
 .s-service-card h3{font-size:16px;margin-bottom:8px;}
 .s-service-card p{font-size:13px;color:var(--text-light);margin-bottom:12px;line-height:1.5;}
-.s-service-price{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.s-service-price{font-family:'Inter',sans-serif;font-size:20px;font-weight:900;color:var(--copper);-webkit-text-fill-color:var(--copper);background:none;}
 
 /* Defendant info cards */
 .s-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;}
-.s-info-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px;}
+.s-info-card{background:var(--surface);border:1px solid var(--border);border-radius:0;padding:20px;}
 .s-info-card-label{font-size:12px;color:var(--text-light);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;}
 .s-info-card-value{font-size:16px;font-weight:600;color:var(--heading);}
 
 /* Participants */
 .s-participants{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
-.s-participant{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;background:rgba(108,92,231,0.03);}
+.s-participant{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;background:rgba(0,0,0,0.02);}
 .s-participant-avatar{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;}
 .s-participant-info strong{display:block;font-size:13px;}
 .s-participant-info span{font-size:12px;color:var(--text-light);}
@@ -348,7 +359,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
 /* Profile card for lawyer */
 .s-profile-card{display:flex;gap:32px;align-items:flex-start;}
-.s-profile-avatar-lg{width:100px;height:100px;border-radius:24px;background:var(--gradient);display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:36px;font-weight:700;color:#fff;flex-shrink:0;}
+.s-profile-avatar-lg{width:100px;height:100px;border-radius:0;background:var(--charcoal);display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:36px;font-weight:900;color:#fff;flex-shrink:0;}
 .s-profile-info{flex:1;}
 .s-profile-name{font-size:24px;font-weight:700;margin-bottom:4px;}
 .s-profile-spec{font-size:15px;color:var(--text-light);margin-bottom:16px;}
@@ -365,12 +376,12 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
 /* Actions list */
 .s-actions{display:flex;flex-direction:column;gap:6px;}
-.s-action-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:13px;color:var(--text);background:rgba(108,92,231,0.03);}
+.s-action-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-size:13px;color:var(--text);background:rgba(0,0,0,0.02);}
 .s-action-time{font-size:12px;color:var(--text-light);white-space:nowrap;}
 
 /* Unread items */
 .s-unread-list{display:flex;flex-direction:column;gap:8px;}
-.s-unread-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:rgba(108,92,231,0.04);border:1px solid rgba(108,92,231,0.1);font-size:13px;}
+.s-unread-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.08);font-size:13px;}
 
 /* Responsive helpers */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
@@ -389,48 +400,55 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
   [style*="display:flex"][style*="justify-content"]{flex-wrap:wrap !important;}
 
   /* NAV */
-  .l-nav{padding:12px 20px !important;}
+  .l-nav{padding:0 16px !important;height:48px !important;}
   .l-nav-links a:not(.l-nav-btn){display:none !important;}
-  .l-nav-links{gap:12px !important;}
-  .l-nav-btn{padding:8px 16px !important;font-size:12px !important;}
+  .l-nav-links{gap:8px !important;}
+  .l-nav-btn{padding:6px 12px !important;font-size:9px !important;}
+  .l-nav-logo::before{width:26px !important;height:26px !important;font-size:14px !important;}
+  .l-nav-logo::after{font-size:11px !important;letter-spacing:0.08em !important;}
 
   /* HERO */
-  .l-hero{padding:80px 20px 40px !important;min-height:auto !important;}
-  .l-hero::before,.l-hero::after{display:none !important;}
+  .l-hero{padding:68px 20px 40px !important;min-height:auto !important;}
+  .l-hero::before{font-size:160px !important;opacity:0.04 !important;}
   .l-hero-inner{grid-template-columns:1fr !important;gap:32px !important;}
-  .l-hero-title{font-size:42px !important;}
-  .l-hero-subtitle{font-size:16px !important;}
+  .l-hero-title{font-size:clamp(48px,12vw,80px) !important;}
+  .l-hero-subtitle{font-size:14px !important;}
   .l-hero-lead{font-size:13px !important;max-width:100% !important;}
-  .l-hero-stats{flex-direction:column !important;gap:8px !important;}
-  .l-stat-pill{width:100% !important;}
-  .l-glass-card{padding:20px 16px !important;}
+  .l-hero-copper{width:80px !important;}
+  .l-hero-stats{flex-direction:column !important;gap:6px !important;}
+  .l-stat-pill{width:100% !important;padding:10px 16px !important;}
+  .l-stat-pill strong{font-size:22px !important;}
+  .l-glass-card{padding:24px 20px !important;}
 
   /* FEATURES */
-  .l-features{padding:48px 20px !important;}
-  .l-features-grid{grid-template-columns:1fr !important;gap:16px !important;}
-  .l-feature-card{padding:24px 20px !important;}
-  .l-section-title{font-size:24px !important;}
+  .l-features{padding:40px 20px 0 !important;}
+  .l-features-grid{grid-template-columns:1fr !important;gap:3px !important;}
+  .l-feature-card{padding:32px 20px !important;}
+  .l-feature-card h3{font-size:clamp(18px,4vw,24px) !important;}
+  .l-section-title{font-size:clamp(24px,5vw,40px) !important;}
   .l-section-sub{font-size:13px !important;max-width:100% !important;}
 
   /* HOW IT WORKS */
   .l-how{padding:48px 20px !important;}
   .l-how::before{display:none !important;}
-  .l-steps{grid-template-columns:1fr !important;gap:12px !important;}
-  .l-step{padding:24px 20px !important;}
+  .l-steps{grid-template-columns:1fr !important;gap:3px !important;}
+  .l-step{padding:28px 20px !important;}
 
   /* CTA */
   .l-cta{padding:48px 20px !important;}
-  .l-cta-title{font-size:24px !important;}
+  .l-cta::before{display:none !important;}
+  .l-cta-title{font-size:clamp(22px,5vw,32px) !important;}
   .l-cta-text{font-size:13px !important;}
-  .l-cta-btn{width:100% !important;text-align:center !important;padding:14px 24px !important;}
+  .l-cta-btn{width:100% !important;text-align:center !important;padding:12px 20px !important;}
 
   /* CABINET SELECT */
   .s-cab-inner{padding:24px 16px !important;}
-  .s-cab-title{font-size:20px !important;margin-bottom:28px !important;}
-  .s-cab-grid{gap:12px !important;justify-content:center !important;}
-  .s-cab-card{width:90px !important;}
-  .s-cab-card-icon{width:60px !important;height:60px !important;border-radius:14px !important;}
-  .s-cab-card h3{font-size:11px !important;}
+  .s-cab-title{font-size:clamp(22px,5vw,32px) !important;margin-bottom:8px !important;}
+  #cabinetSelect::before{display:none !important;}
+  .s-cab-grid{gap:3px !important;justify-content:center !important;}
+  .s-cab-card{width:90px !important;padding:14px 6px !important;}
+  .s-cab-card-icon{width:56px !important;height:56px !important;}
+  .s-cab-card h3{font-size:10px !important;}
 
   /* APP LAYOUT — sidebar becomes top bar */
   .s-app{flex-direction:column !important;}
@@ -443,7 +461,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
     overflow-x:auto !important;
   }
   .s-sidebar-top{padding:0 !important;margin-right:8px !important;flex-shrink:0 !important;}
-  .s-sidebar-logo{font-size:16px !important;}
+  .s-sidebar-logo{font-size:12px !important;}
   .s-sidebar-badge{display:none !important;}
   .s-sidebar-nav{
     flex-direction:row !important;overflow-x:auto !important;
@@ -453,10 +471,12 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
   .s-nav-item{
     padding:6px 8px !important;font-size:11px !important;
     white-space:nowrap !important;margin-bottom:0 !important;
-    border-radius:6px !important;flex-shrink:0 !important;
+    border-radius:4px !important;flex-shrink:0 !important;
+    border-left:none !important;
   }
   .s-nav-item span{display:none !important;}
   .s-nav-item svg{width:16px !important;height:16px !important;}
+  .s-nav-item.active{border-left:none !important;border-bottom:2px solid var(--copper) !important;}
   .s-nav-dot{display:none !important;}
   .s-sidebar-sep,.s-sidebar-bottom,.s-sidebar-search{display:none !important;}
   .s-main{flex:1 !important;height:auto !important;min-height:0 !important;}
@@ -511,7 +531,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
   /* CONSULTATION */
   .s-consult-header{padding:10px 16px !important;}
-  .s-consult-header-logo{font-size:16px !important;}
+  .s-consult-header-logo{font-size:12px !important;}
   .s-consult-body{padding:12px 16px !important;max-width:100% !important;}
   .s-consult-input{padding:10px 14px !important;font-size:13px !important;}
   .s-consult-footer{flex-wrap:wrap !important;gap:8px !important;padding:8px 12px !important;}
@@ -552,15 +572,16 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 }
 
 @media(max-width:380px){
-  .l-hero-title{font-size:32px !important;}
-  .l-nav-logo{font-size:18px !important;}
-  .s-cab-card{width:70px !important;}
-  .s-cab-card-icon{width:48px !important;height:48px !important;}
-  .s-cab-card h3{font-size:9px !important;}
+  .l-hero-title{font-size:clamp(32px,10vw,48px) !important;}
+  .l-nav-logo::before{width:22px !important;height:22px !important;font-size:12px !important;}
+  .l-nav-logo::after{font-size:9px !important;}
+  .s-cab-card{width:68px !important;}
+  .s-cab-card-icon{width:44px !important;height:44px !important;}
+  .s-cab-card h3{font-size:8px !important;}
   .s-stats{grid-template-columns:1fr !important;}
   .s-stat-val{font-size:18px !important;}
   .s-page-title{font-size:18px !important;}
-  .l-section-title{font-size:20px !important;}
+  .l-section-title{font-size:clamp(18px,5vw,24px) !important;}
 }
 </style>
 </head>
@@ -569,7 +590,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 <!-- ==================== LANDING PAGE ==================== -->
 <div id="landing">
   <nav class="l-nav">
-    <div class="l-nav-logo">STAREC</div>
+    <div class="l-nav-logo"></div>
     <div class="l-nav-links">
       <a href="#features">Возможности</a>
       <a href="#how">Как это работает</a>
@@ -583,7 +604,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
       <div>
         <div class="l-hero-tag">Legal Tech</div>
         <h1 class="l-hero-title">STAREC</h1>
-        <div style="font-size:14px;color:rgba(255,255,255,0.4);letter-spacing:.08em;margin-top:-10px;margin-bottom:16px;">старец</div>
+        <div class="l-hero-copper"></div>
         <p class="l-hero-subtitle">Юридическая экосистема полного цикла</p>
         <p class="l-hero-lead">Адвокат ведёт дела и анализирует материалы &rarr; Подзащитный следит за ходом своего дела &rarr; Сканер оцифровывает тома по запросу &rarr; Юрист-консультант отвечает на вопросы &rarr; Реестр помогает найти специалиста. Пять кабинетов, одна платформа.</p>
         <div class="l-hero-stats">
@@ -597,60 +618,60 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
           <!-- 1: Сканирование -->
           <div style="display:flex;gap:16px;">
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Сканирование томов занимает недели</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.5;">Сканирование томов занимает недели</div>
             </div>
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Сервис оцифровки: загрузка сканов, распознавание текста, проверка качества и отправка адвокату в один клик</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">Сервис оцифровки: загрузка сканов, распознавание текста, проверка качества и отправка адвокату в один клик</div>
             </div>
           </div>
-          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);"></div>
           <!-- 2: Анализ дела -->
           <div style="display:flex;gap:16px;">
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Невозможно найти нужный эпизод среди сотен томов</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.5;">Невозможно найти нужный эпизод среди сотен томов</div>
             </div>
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Умный поиск по всем материалам дела, анализ противоречий в показаниях, выявление нарушений</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">Умный поиск по всем материалам дела, анализ противоречий в показаниях, выявление нарушений</div>
             </div>
           </div>
-          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);"></div>
           <!-- 3: Юридическая помощь -->
           <div style="display:flex;gap:16px;">
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Юридическая консультация дорогая и недоступная</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.5;">Юридическая консультация дорогая и недоступная</div>
             </div>
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Помощник Анна: ответы на юридические вопросы, подготовка претензий, исков и жалоб за минуты</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">Помощник Анна: ответы на юридические вопросы, подготовка претензий, исков и жалоб за минуты</div>
             </div>
           </div>
-          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);"></div>
           <!-- 4: Подзащитный -->
           <div style="display:flex;gap:16px;">
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Подзащитный не знает, что происходит с его делом</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.5;">Подзащитный не знает, что происходит с его делом</div>
             </div>
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Личный кабинет: статус дела, даты заседаний, материалы и связь с адвокатом в реальном времени</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">Личный кабинет: статус дела, даты заседаний, материалы и связь с адвокатом в реальном времени</div>
             </div>
           </div>
-          <div style="height:1px;background:rgba(255,255,255,0.06);"></div>
+          <div style="height:1px;background:rgba(255,255,255,0.08);"></div>
           <!-- 5: Реестр юристов -->
           <div style="display:flex;gap:16px;">
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(253,121,168,0.8);margin-bottom:4px;">ПРОБЛЕМА</div>
-              <div style="font-size:13px;font-weight:600;color:#fff;line-height:1.4;">Сложно найти проверенного юриста</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">ПРОБЛЕМА</div>
+              <div style="font-size:14px;font-weight:400;color:rgba(255,255,255,0.45);line-height:1.5;">Сложно найти проверенного юриста</div>
             </div>
             <div style="flex:1;">
-              <div style="font-size:10px;font-weight:600;letter-spacing:.08em;color:rgba(0,212,170,0.8);margin-bottom:4px;">РЕШЕНИЕ</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;">Реестр с рейтингами, специализацией, отзывами клиентов и прямой связью со специалистом</div>
+              <div style="font-family:'Space Mono',monospace;font-size:9px;font-weight:400;letter-spacing:2px;color:#B87333;margin-bottom:4px;">РЕШЕНИЕ</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.5;">Реестр с рейтингами, специализацией, отзывами клиентов и прямой связью со специалистом</div>
             </div>
           </div>
         </div>
@@ -705,17 +726,17 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
       <p class="l-section-sub">Начните работу с платформой за несколько минут.</p>
       <div class="l-steps">
         <div class="l-step">
-          <div class="l-step-num">1</div>
+          <div class="l-step-num">Шаг 01</div>
           <h3>Зарегистрируйтесь</h3>
           <p>Создайте аккаунт и укажите вашу роль: адвокат, сканер, подзащитный или юрист.</p>
         </div>
         <div class="l-step">
-          <div class="l-step-num">2</div>
+          <div class="l-step-num">Шаг 02</div>
           <h3>Выберите кабинет</h3>
           <p>Войдите в свой кабинет с персонализированным интерфейсом и набором инструментов.</p>
         </div>
         <div class="l-step">
-          <div class="l-step-num">3</div>
+          <div class="l-step-num">Шаг 03</div>
           <h3>Работайте</h3>
           <p>Загружайте документы, анализируйте материалы, генерируйте процессуальные документы.</p>
         </div>
@@ -737,6 +758,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
   <div class="s-cab-inner">
     <div class="s-cab-logo">STAREC</div>
     <h2 class="s-cab-title">Выберите кабинет</h2>
+    <div style="width:80px;height:2px;background:#B87333;margin-bottom:52px;margin-top:-44px;"></div>
     <div class="s-cab-grid">
       <div class="s-cab-card" onclick="openCabinet('advocate')">
         <div class="s-cab-card-icon s-cab-icon-advocate"><svg width="36" height="36" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="10" width="22" height="18" rx="3"/><path d="M13 10V7a5 5 0 0110 0v3"/><path d="M14 20h8M14 24h5"/></svg></div>
@@ -755,7 +777,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <h3>Консультация</h3>
       </div>
       <div class="s-cab-card" onclick="openCabinet('lawyer')">
-        <div class="s-cab-card-icon s-cab-icon-lawyer"><svg width="36" height="36" fill="none" stroke="rgba(60,40,20,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="18,4 21,13 30,13 23,19 25,28 18,23 11,28 13,19 6,13 15,13"/></svg></div>
+        <div class="s-cab-card-icon s-cab-icon-lawyer"><svg width="36" height="36" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="18,4 21,13 30,13 23,19 25,28 18,23 11,28 13,19 6,13 15,13"/></svg></div>
         <h3>Юрист</h3>
       </div>
     </div>
@@ -1194,12 +1216,12 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
               <div style="font-size:12px;color:var(--text-light);margin-top:4px;">На действия следователя, суда</div>
             </div>
             <div style="padding:20px;border:1px solid var(--border);border-radius:12px;text-align:center;cursor:pointer;transition:all .2s;" onmouseover="this.style.borderColor='var(--violet)'" onmouseout="this.style.borderColor='var(--border)'">
-              <svg width="28" height="28" fill="none" stroke="var(--violet)" stroke-width="1.5" style="margin-bottom:8px;"><rect x="4" y="3" width="20" height="22" rx="3"/><path d="M9 10h10M9 14h10M9 18h4"/><circle cx="20" cy="20" r="5" fill="rgba(108,92,231,0.1)"/><path d="M18 20h4M20 18v4"/></svg>
+              <svg width="28" height="28" fill="none" stroke="var(--violet)" stroke-width="1.5" style="margin-bottom:8px;"><rect x="4" y="3" width="20" height="22" rx="3"/><path d="M9 10h10M9 14h10M9 18h4"/><circle cx="20" cy="20" r="5" fill="rgba(0,0,0,0.08)"/><path d="M18 20h4M20 18v4"/></svg>
               <div style="font-size:14px;font-weight:600;">Заявление</div>
               <div style="font-size:12px;color:var(--text-light);margin-top:4px;">Об ознакомлении, изменении меры</div>
             </div>
           </div>
-          <div style="padding:16px 20px;border-radius:12px;background:rgba(108,92,231,0.04);border:1px solid rgba(108,92,231,0.1);">
+          <div style="padding:16px 20px;border-radius:12px;background:rgba(0,0,0,0.03);border:1px solid rgba(0,0,0,0.08);">
             <div style="font-size:13px;font-weight:600;color:var(--heading);margin-bottom:4px;">Последний сгенерированный документ</div>
             <div style="font-size:13px;color:var(--text-light);">Ходатайство о назначении повторной экспертизы — 07.03.2026</div>
           </div>
@@ -1430,21 +1452,21 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <div class="s-card">
           <div class="s-card-title">Переписка по делу</div>
           <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background=''">
+            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background=''">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
                 <div style="font-size:14px;font-weight:600;">Козлов В.А. (следователь)</div>
                 <div style="font-size:12px;color:var(--text-light);">08.03.2026 14:22</div>
               </div>
               <div style="font-size:13px;color:var(--text-light);">Уведомление о назначении даты ознакомления с материалами дела...</div>
             </div>
-            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background=''">
+            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background=''">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
                 <div style="font-size:14px;font-weight:600;">Тверской районный суд</div>
                 <div style="font-size:12px;color:var(--text-light);">06.03.2026 10:15</div>
               </div>
               <div style="font-size:13px;color:var(--text-light);">Повестка о явке на судебное заседание 15.03.2026 в 10:00...</div>
             </div>
-            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background=''">
+            <div style="padding:16px 20px;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background=''">
               <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
                 <div style="font-size:14px;font-weight:600;">Иванов А.С. (клиент)</div>
                 <div style="font-size:12px;color:var(--text-light);">05.03.2026 18:40</div>
@@ -1608,43 +1630,43 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <!-- Кодексы -->
         <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading);margin-bottom:14px;">Основные кодексы</div>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;">
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">УК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Уголовный кодекс</div>
-            <div style="font-size:11px;color:var(--violet);margin-top:6px;">361 статья</div>
+            <div style="font-size:11px;color:var(--copper);margin-top:6px;">361 статья</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">УПК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Уголовно-процессуальный</div>
-            <div style="font-size:11px;color:var(--violet);margin-top:6px;">477 статей</div>
+            <div style="font-size:11px;color:var(--copper);margin-top:6px;">477 статей</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">ГК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Гражданский кодекс</div>
-            <div style="font-size:11px;color:var(--violet);margin-top:6px;">1551 статья</div>
+            <div style="font-size:11px;color:var(--copper);margin-top:6px;">1551 статья</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">КоАП РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Административный</div>
-            <div style="font-size:11px;color:var(--violet);margin-top:6px;">569 статей</div>
+            <div style="font-size:11px;color:var(--copper);margin-top:6px;">569 статей</div>
           </div>
         </div>
 
         <!-- Ещё кодексы -->
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px;">
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">ТК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Трудовой кодекс</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">СК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Семейный кодекс</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">НК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Налоговый кодекс</div>
           </div>
-          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(108,92,231,0.3)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;" onmouseover="this.style.borderColor='rgba(0,0,0,0.15)'" onmouseout="this.style.borderColor='var(--border)'">
             <div style="font-weight:600;font-size:14px;color:var(--heading);margin-bottom:4px;">АПК РФ</div>
             <div style="font-size:12px;color:var(--text-light);">Арбитражный процесс</div>
           </div>
@@ -1653,41 +1675,41 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
         <!-- Быстрый доступ: статьи по делу -->
         <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading);margin-bottom:14px;">Статьи по вашим делам</div>
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:28px;">
-          <div style="padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div>
               <div style="font-weight:600;font-size:14px;color:var(--heading);">ст. 159 УК РФ — Мошенничество</div>
               <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Дело Иванова А.С. &middot; ч. 4 — особо крупный размер</div>
             </div>
-            <div style="font-size:11px;color:var(--violet);font-weight:600;padding:4px 10px;background:rgba(108,92,231,0.08);border-radius:6px;">до 10 лет</div>
+            <div style="font-size:11px;color:var(--copper);font-weight:600;padding:4px 10px;background:rgba(0,0,0,0.06);border-radius:6px;">до 10 лет</div>
           </div>
-          <div style="padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div>
               <div style="font-weight:600;font-size:14px;color:var(--heading);">ст. 228 УК РФ — Незаконный оборот</div>
               <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Дело Петровой М.В. &middot; ч. 2 — в крупном размере</div>
             </div>
-            <div style="font-size:11px;color:var(--violet);font-weight:600;padding:4px 10px;background:rgba(108,92,231,0.08);border-radius:6px;">до 10 лет</div>
+            <div style="font-size:11px;color:var(--copper);font-weight:600;padding:4px 10px;background:rgba(0,0,0,0.06);border-radius:6px;">до 10 лет</div>
           </div>
-          <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div>
               <div style="font-weight:600;font-size:14px;color:var(--heading);">ст. 290 УК РФ — Получение взятки</div>
               <div style="font-size:12px;color:var(--text-light);margin-top:2px;">Дело Сидорова К.П. &middot; ч. 3 — за незаконные действия</div>
             </div>
-            <div style="font-size:11px;color:var(--violet);font-weight:600;padding:4px 10px;background:rgba(108,92,231,0.08);border-radius:6px;">до 8 лет</div>
+            <div style="font-size:11px;color:var(--copper);font-weight:600;padding:4px 10px;background:rgba(0,0,0,0.06);border-radius:6px;">до 8 лет</div>
           </div>
         </div>
 
         <!-- Судебная практика -->
         <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;color:var(--heading);margin-bottom:14px;">Судебная практика (СУДАКТ)</div>
         <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;">
-          <div style="padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div style="font-weight:600;font-size:13px;color:var(--heading);">Постановление Пленума ВС РФ N 48 от 30.11.2017</div>
             <div style="font-size:12px;color:var(--text-light);margin-top:4px;">О судебной практике по делам о мошенничестве, присвоении и растрате</div>
           </div>
-          <div style="padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;border-bottom:1px solid var(--border);cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div style="font-weight:600;font-size:13px;color:var(--heading);">Определение ВС РФ N 5-УД23-45 от 12.09.2025</div>
             <div style="font-size:12px;color:var(--text-light);margin-top:4px;">Переквалификация с ч.4 на ч.2 ст.159 при пересмотре суммы ущерба</div>
           </div>
-          <div style="padding:14px 16px;cursor:pointer;" onmouseover="this.style.background='rgba(108,92,231,0.03)'" onmouseout="this.style.background='transparent'">
+          <div style="padding:14px 16px;cursor:pointer;" onmouseover="this.style.background='rgba(0,0,0,0.02)'" onmouseout="this.style.background='transparent'">
             <div style="font-weight:600;font-size:13px;color:var(--heading);">Обзор судебной практики ВС РФ N 1 (2026)</div>
             <div style="font-size:12px;color:var(--text-light);margin-top:4px;">Практика применения ст.159 УК РФ в сфере предпринимательства</div>
           </div>
@@ -2145,7 +2167,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
       </div>
       <div class="s-chat-msg bot">
         <div class="s-chat-avatar bot-av">А</div>
-        <div class="s-chat-bubble">При задержании вы имеете следующие права:<br><br><strong>1. Право на адвоката</strong> (ст. 48 Конституции РФ, ст. 46 УПК РФ)<br>Вы вправе требовать присутствия адвоката с момента задержания. Без адвоката не обязаны давать показания.<br><br><strong>2. Право на телефонный звонок</strong> (ст. 96 УПК РФ)<br>В течение 3 часов с момента доставления вам обязаны предоставить один телефонный звонок для уведомления близких.<br><br><strong>3. Право знать основания задержания</strong> (ст. 46 УПК РФ)<br>Вам обязаны разъяснить основания задержания и ваши права.<br><br><strong>4. Право на молчание</strong> (ст. 51 Конституции РФ)<br>Никто не обязан свидетельствовать против себя. Отказ от показаний не может быть использован против вас.<br><br><strong>5. Срок задержания</strong> (ст. 94 УПК РФ)<br>Не более 48 часов до судебного решения о мере пресечения.<br><br>Подробнее: <a href="https://pravo.starec.ai/upk/46" style="color:var(--violet);text-decoration:underline;">ст. 46 УПК РФ на pravo.starec.ai</a></div>
+        <div class="s-chat-bubble">При задержании вы имеете следующие права:<br><br><strong>1. Право на адвоката</strong> (ст. 48 Конституции РФ, ст. 46 УПК РФ)<br>Вы вправе требовать присутствия адвоката с момента задержания. Без адвоката не обязаны давать показания.<br><br><strong>2. Право на телефонный звонок</strong> (ст. 96 УПК РФ)<br>В течение 3 часов с момента доставления вам обязаны предоставить один телефонный звонок для уведомления близких.<br><br><strong>3. Право знать основания задержания</strong> (ст. 46 УПК РФ)<br>Вам обязаны разъяснить основания задержания и ваши права.<br><br><strong>4. Право на молчание</strong> (ст. 51 Конституции РФ)<br>Никто не обязан свидетельствовать против себя. Отказ от показаний не может быть использован против вас.<br><br><strong>5. Срок задержания</strong> (ст. 94 УПК РФ)<br>Не более 48 часов до судебного решения о мере пресечения.<br><br>Подробнее: <a href="https://pravo.starec.ai/upk/46" style="color:var(--copper);text-decoration:underline;">ст. 46 УПК РФ на pravo.starec.ai</a></div>
       </div>
       <div class="s-chat-msg user">
         <div class="s-chat-avatar user-av">В</div>
@@ -2634,17 +2656,17 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 <audio id="bgAudio" preload="auto"></audio>
 
 <!-- Overlay: нажмите чтобы включить музыку -->
-<div id="musicOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(12,6,22,0.92);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .5s;">
+<div id="musicOverlay" style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:rgba(245,245,240,0.97);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity .5s;">
   <div style="text-align:center;">
-    <div style="width:80px;height:80px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 40px rgba(108,92,231,0.4);animation:musicPulse 2s ease-in-out infinite;">
+    <div style="width:80px;height:80px;border-radius:0;background:#B87333;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 0 40px rgba(184,115,51,0.3);animation:musicPulse 2s ease-in-out infinite;">
       <svg width="32" height="32" fill="#fff" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
     </div>
-    <div style="font-family:'Outfit',sans-serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:8px;">STAREC</div>
-    <div style="font-size:14px;color:rgba(255,255,255,0.5);">Нажмите, чтобы войти</div>
+    <div style="font-family:'Inter',sans-serif;font-size:14px;font-weight:900;color:#1A1A1A;margin-bottom:8px;letter-spacing:0.1em;text-transform:uppercase;">STAREC</div>
+    <div style="font-family:'Space Mono',monospace;font-size:10px;color:#888;letter-spacing:2px;text-transform:uppercase;">Нажмите, чтобы войти</div>
   </div>
 </div>
 <style>
-@keyframes musicPulse{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(108,92,231,0.4);}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(108,92,231,0.6);}}
+@keyframes musicPulse{0%,100%{transform:scale(1);box-shadow:0 0 40px rgba(184,115,51,0.3);}50%{transform:scale(1.05);box-shadow:0 0 60px rgba(184,115,51,0.4);}}
 </style>
 
 <!-- Плеер: play/pause + volume -->
@@ -2653,7 +2675,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
     <svg id="bgMusicIcon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6v4M4 4v8M7 2v12M10 5v6M13 7v2"/></svg>
     <span id="bgMusicLabel">Пауза</span>
   </button>
-  <input id="bgMusicVol" type="range" min="0" max="100" value="30" oninput="setBgVolume(this.value)" style="width:60px;height:3px;accent-color:#6C5CE7;cursor:pointer;">
+  <input id="bgMusicVol" type="range" min="0" max="100" value="30" oninput="setBgVolume(this.value)" style="width:60px;height:3px;accent-color:#B87333;cursor:pointer;">
 </div>
 
 <script>
@@ -2682,7 +2704,7 @@ table.s-table tr:hover{background:rgba(108,92,231,0.03);}
 
   function updateBtn(){
     document.getElementById('bgMusicLabel').textContent = bgPlaying ? 'Пауза' : 'Играть';
-    document.getElementById('bgMusicIcon').style.color = bgPlaying ? '#6C5CE7' : 'rgba(255,255,255,0.6)';
+    document.getElementById('bgMusicIcon').style.color = bgPlaying ? '#B87333' : 'rgba(255,255,255,0.6)';
   }
 
   window.toggleBgMusic = function(){
